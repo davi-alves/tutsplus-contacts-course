@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ContactsApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts Tuts+</title>
+    <!-- base url! I didnt know that -->
+    <base href="/">
+    <!-- styles -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-glyphicons.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Contacts</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" ng-view></div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
+    <!-- APP -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/list/main.js"></script>
+    <script src="scripts/list/controllers/list.js"></script>
+    <script src="scripts/contact/main.js"></script>
+    <script src="scripts/contact/services/contact.js"></script>
+</body>
+</html>
