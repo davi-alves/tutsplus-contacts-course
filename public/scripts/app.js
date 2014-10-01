@@ -1,12 +1,12 @@
 /*global angular*/
-(function() {
+(function () {
   'use strict';
 
   angular.module('ContactsApp', [
-    'ContactsApp.List',
+    'ContactsApp.Contact',
     'ngRoute'
     ])
-    .config(function($locationProvider) {
+    .config(function ($locationProvider) {
 
       $locationProvider.html5Mode(true);
     });

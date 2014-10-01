@@ -1,11 +1,11 @@
 /*global angular*/
-(function() {
+(function () {
   'use strict';
 
   angular.module('ContactsApp.Contact')
     .factory('Contact', [
       '$resource',
-      function($resource) {
+      function ($resource) {
         return $resource('/api/contacts/:id', {
           id: '@id'
         }, {

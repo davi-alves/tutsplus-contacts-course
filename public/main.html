@@ -6,8 +6,9 @@
     <!-- base url! I didnt know that -->
     <base href="/">
     <!-- styles -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/flatly/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/custom.css">
 </head>
 <body>
 
@@ -26,11 +27,16 @@
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-route/angular-route.min.js"></script>
     <script src="lib/angular-resource/angular-resource.min.js"></script>
+    <script src="lib/angular-messages/angular-messages.min.js"></script>
     <!-- APP -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/list/main.js"></script>
-    <script src="scripts/list/controllers/list.js"></script>
     <script src="scripts/contact/main.js"></script>
+    <script src="scripts/contact/controllers/list.js"></script>
+    <script src="scripts/contact/controllers/new.js"></script>
     <script src="scripts/contact/services/contact.js"></script>
+    <script src="scripts/util/main.js"></script>
+    <script src="scripts/util/filters/label-case.js"></script>
+    <script src="scripts/util/filters/key-filter.js"></script>
+    <script src="scripts/util/directives/form-field.js"></script>
 </body>
 </html>
