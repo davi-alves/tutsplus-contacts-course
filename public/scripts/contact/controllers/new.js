@@ -17,12 +17,16 @@
           adress: ['', 'text']
         });
 
+        $scope.back = function () {
+          $location.url('/contacts');
+        };
+
         $scope.save = function () {
           if ($scope.newContact.$invalid) {
             $scope.$broadcast('record:invalid');
           } else {
             $scope.contact.$save();
-            $location.url('/contacts');
+            $scope.back();
           }
         };
       }

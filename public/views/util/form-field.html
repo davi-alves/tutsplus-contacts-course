@@ -1,11 +1,12 @@
-<div class="row form-group" ng-form="{{field}}" ng-class="{ 'has-error': {{field}}.$dirty && {{field}}.$invalid }">
-    <label for="" class="col-sm-2 control-label">
+<div class="row form-group" ng-form="{{ field }}" ng-class="{ 'has-error': {{field}}.$dirty && {{field}}.$invalid }">
+    <label for="{{ field }}" class="col-sm-2 control-label">
         {{ field | labelCase }} <span ng-if="required">*</span>
     </label>
+    <!-- SWITCH ON REQUIRED ATTRIBUTE -->
     <div class="col-sm-6" ng-switch="required">
 
         <!-- REQUIRED -->
-        <input type="{{ record[field][1] }}" class="form-control" required
+        <input type="{{ record[field][1] }}" class="form-control" id="{{ field }}" required
             ng-switch-when="true"
             ng-model="record[field][0]"
             ng-change="update()"
@@ -13,10 +14,11 @@
 
         <!-- NOT REQUIRED -->
         <div class="input-group" ng-switch-default>
-            <input type="{{ record[field][1] }}" class="form-control"
+            <input type="{{ record[field][1] }}" class="form-control" id="{{ field }}"
                 ng-model="record[field][0]"
                 ng-change="update()"
                 ng-blur="blurUpdate()" />
+            <!-- REMOVE BUTTON -->
             <span class="input-group-btn">
                 <button class="btn btn-default" ng-click="remove(field)">
                     <span class="glyphicon glyphicon-remove-circle"></span>
@@ -26,6 +28,7 @@
         </div>
     </div>
 
+    <!-- ERROR MESSAGE DIV -->
     <div class="col-sm-4 has-error" ng-show="{{field}}.$dirty && {{field}}.$invalid"
         ng-messages="{{field}}.$error">
         <p class="control-label" ng-message="required">{{ field | labelCase }} is required.</p>

@@ -1,6 +1,6 @@
 <div>
 
-    <div class="row-form-group" ng-form="newField" ng-if="display">
+    <div class="row form-group" ng-form="newField" ng-if="display">
         <div class="col-sm-2">
             <input type="text" class="form-control" name="text" placeholder="Name" required
                 ng-model="field.name" >
@@ -18,7 +18,7 @@
     <div class="row form-group">
         <div class="btn-group col-sm-offset-2 dropup">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Add new Field <span class="carret"></span>
+                Add new Field <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
                 <li ng-repeat="(k,v) in types">

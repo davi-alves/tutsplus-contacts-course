@@ -45,6 +45,7 @@
       req.dbQuery = {
         id: parseInt(req.params.id, 10)
       };
+      next();
     })
   // contacts sub route (:id)
   .route('/contacts/:id')
@@ -56,9 +57,9 @@
     .put(function (req, res) { // update contact
       var contact = req.body;
       // angularjs stuff
-      delete contact[$promise];
-      delete contact[$resolved];
-      db.update(contact, function (err, data) {
+      delete contact.$promise;
+      delete contact.$resolved;
+      db.update(req.dbQuery, contact, function (err, data) {
         res.json(data[0]); // return the first updated item (it's expected to be only one)
       });
     })

@@ -1,0 +1,20 @@
+<h2>{{ contact.firstName[0] }} {{ contact.lastName[0] }}</h2>
+
+<form name="editContact" novalidate class="form-horizontal">
+    <!-- REQUIRED -->
+    <form-field record="contact" field="firstName" required="true"></form-field>
+    <form-field record="contact" field="lastName" required="true"></form-field>
+    <!-- OTHER FIELDS -->
+    <form-field ng-repeat="(k,v) in contact | keyFilter:['id', 'userId', 'firstName', 'lastName']" record="contact"
+        field="{{ k }}"></form-field>
+    <!-- ADD FIELD -->
+    <new-field record="contact"></new-field>
+
+
+    <div class="row form-group">
+        <div class="col-sm-offset-2">
+            <button class="btn btn-default" ng-click="back()">Back</button>
+            <button class="btn btn-danger" ng-click="delete()">Delete Contact</button>
+        </div>
+    </div>
+</form>

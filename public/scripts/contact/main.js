@@ -17,6 +17,10 @@
         .when('/contacts/new', {
           controller: 'NewCtrl',
           templateUrl: 'views/contact/new.html'
+        })
+        .when('/contacts/:id', {
+          controller: 'EditCtrl',
+          templateUrl: 'views/contact/edit.html'
         });
 
       $locationProvider.html5Mode(true);
