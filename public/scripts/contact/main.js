@@ -21,8 +21,22 @@
         .when('/contacts/:id', {
           controller: 'EditCtrl',
           templateUrl: 'views/contact/edit.html'
+        })
+        .when('/settings', {
+          controller: 'SettingsCtrl',
+          templateUrl: 'views/contact/settings.html'
         });
 
       $locationProvider.html5Mode(true);
-    });
+    })
+    .value('options', {})
+    .run(
+      [
+      'options', 'Fields',
+      function (options, Fields) {
+          Fields.get().success(function (data) {
+            options.displayed_fields = data;
+          });
+      }
+    ]);
 })();

@@ -4,8 +4,10 @@
 
   angular.module('ContactsApp.Contact')
     .controller('NewCtrl', [
-      '$scope', 'Contact', '$location',
-      function ($scope, Contact, $location) {
+      '$scope', '$rootScope', 'Contact', '$location',
+      function ($scope, $rootScope, Contact, $location) {
+        $rootScope.PAGE = 'new';
+
         $scope.contact = new Contact({
           firstName: ['', 'text'],
           lastName: ['', 'text'],

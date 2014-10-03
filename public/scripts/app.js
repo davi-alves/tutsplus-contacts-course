@@ -6,8 +6,15 @@
     'ContactsApp.Contact',
     'ngRoute'
     ])
-    .config(function ($locationProvider) {
+    .config([
+      '$routeProvider', '$locationProvider',
+      function ($routeProvider, $locationProvider) {
+        $routeProvider
+          .otherwise({
+            redirectTo: '/contacts'
+          });
 
-      $locationProvider.html5Mode(true);
-    });
+        $locationProvider.html5Mode(true);
+      }
+    ]);
 })();

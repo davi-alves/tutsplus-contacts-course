@@ -10,16 +10,6 @@
     router = express.Router();
 
   router
-    .use(function (req, res, next) {
-      // temorary workaround to moke user authentication
-      if (!req.user) {
-        req.user = {
-          id: 1
-        };
-      }
-
-      next();
-    })
     .use(bodyParser.json())
   // contacts route
   .route('/contacts')

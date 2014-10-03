@@ -14,7 +14,12 @@
 
     <div class="container">
         <div class="page-header">
-            <h1>Contacts</h1>
+            <h1>
+                Contacts
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" ng-include="'views/_partials/nav.html'"></div>
         </div>
         <div class="row">
             <div class="col-sm-12" ng-view></div>
@@ -34,7 +39,9 @@
     <script src="scripts/contact/controllers/list.js"></script>
     <script src="scripts/contact/controllers/new.js"></script>
     <script src="scripts/contact/controllers/edit.js"></script>
+    <script src="scripts/contact/controllers/settings.js"></script>
     <script src="scripts/contact/services/contact.js"></script>
+    <script src="scripts/contact/services/fields.js"></script>
     <script src="scripts/util/main.js"></script>
     <script src="scripts/util/filters/label-case.js"></script>
     <script src="scripts/util/filters/camel-case.js"></script>
